@@ -8,7 +8,7 @@ import { UserData } from '../../services/interface/ElementType';
 import { CardItem } from '../../components/CardItem';
 import Header from '../../components/Header';
 
-export const TaskList = () => {
+export const List = () => {
   const navigation = useNavigation();
   const { data: elements, error, isLoading } = useGetElementsQuery();
 
@@ -17,7 +17,7 @@ export const TaskList = () => {
   return (
     <View style={{ flex: 1, backgroundColor: '#ffead7' }}>
       <Header
-        label={'User List'}
+        label={'List'}
         backgroundColor="#f88a71"
         handleNavigate={navigation.goBack}
       />

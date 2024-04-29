@@ -24,7 +24,7 @@ import {
 import { theme } from '../theme';
 import Home from './page/Home';
 import { Task } from './page/Task';
-import { TaskList } from './page/TaskList';
+import { List } from './page/List';
 import { store } from './store';
 
 const Stack = createStackNavigator();
@@ -32,7 +32,7 @@ const Stack = createStackNavigator();
 export type RootStackParamList = {
   home: undefined;
   task: undefined;
-  taskList: undefined;
+  list: undefined;
 };
 
 export const App = () => {
@@ -74,8 +74,8 @@ export const App = () => {
                 options={{ headerShown: false }}
               />
               <Stack.Screen
-                name="taskList"
-                component={TaskList}
+                name="list"
+                component={List}
                 options={{ headerShown: false }}
               />
             </Stack.Navigator>

@@ -89,7 +89,7 @@ const Home = ({ navigation }: Props) => {
               <Button label={'Taks'} variant="secondary" onPress={() => handleNavigate("task")}></Button>
             </View>
             <View style={{ flex: 2 }}>
-              <Button label={'List'} variant="secondary" onPress={() => handleNavigate("taskList")}></Button>
+              <Button label={'List'} variant="secondary" onPress={() => handleNavigate("list")}></Button>
             </View>
           </View>
         </View>
@@ -113,7 +113,5 @@ const styles = StyleSheet.create({
 });
 
 export default Home;
-function useEffect(arg0: () => void, arg1: ((taskWithId: import("../../store/tasks/slice").TaskWithId[]) => void)[]) {
-  throw new Error('Function not implemented.');
-}
+
 

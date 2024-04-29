@@ -1,30 +1,40 @@
-import React from 'react'
-import { Text, View } from 'react-native'
-import Header from '../../components/Header'
+import React, { useState } from 'react';
+import { View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { FAB, Portal } from 'react-native-paper';
 
+import Header from '../../components/Header';
+import TaskList from '../../components/TaskList';
+import { TaskCreationModal } from '../../components/TaskCreationModal';
+
 export const Task = () => {
   const navigation = useNavigation();
+  const [state, setState] = useState({ open: false, showModal: false });
 
-  const [state, setState] = React.useState({ open: false });
+  const onStateChange = ({ open }) => setState((prev) => ({ ...prev, open }));
 
-  // Función para manejar el cambio de estado del FAB
-  const onStateChange = ({ open }) => setState({ open });
+  const { open, showModal } = state;
 
-  const { open } = state;
-  
+  const handleAddTaskPress = () => {
+    setState((prev) => ({ ...prev, showModal: true }));
+  };
+
   return (
-   <View style={{ flex: 1, backgroundColor: "#ffead7"}}>
-    <Header label={'Tasks'} backgroundColor='#f88a71' handleNavigate={navigation.goBack} />
-    <Portal>
+    <View style={{ flex: 1, backgroundColor: '#ffead7' }}>
+      <Header
+        label={'Tasks'}
+        backgroundColor="#f88a71"
+        handleNavigate={navigation.goBack}
+      />
+      <TaskList />
+
+      <Portal>
         <FAB.Group
           open={open}
           visible
           icon={open ? 'close' : 'plus'}
           actions={[
-            { icon: 'plus', onPress: () => console.log('Pressed add') },
-            { icon: 'file', label: 'Add task', onPress: () => console.log('Pressed star') }
+            { icon: 'file', label: 'Add task', onPress: handleAddTaskPress },
           ]}
           onStateChange={onStateChange}
           onPress={() => {
@@ -33,7 +43,12 @@ export const Task = () => {
             }
           }}
         />
+
+        <TaskCreationModal
+          showModal={showModal}
+          onClose={() => setState((prev) => ({ ...prev, showModal: false }))}
+        />
       </Portal>
-   </View> 
-  )
-}
+    </View>
+  );
+};
