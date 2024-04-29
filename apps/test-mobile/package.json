@@ -15,7 +15,14 @@
     "@expo/metro-config": "*",
     "react-native-svg-transformer": "*",
     "tsconfig-paths-webpack-plugin": "*",
-    "@nx/webpack": "*"
+    "@nx/webpack": "*",
+    "react-native-gesture-handler": "~2.14.0",
+    "react-native-paper": "*",
+    "react-native-safe-area-context": "4.8.2",
+    "@expo-google-fonts/nunito": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/stack": "*",
+    "react-native-screens": "~3.29.0"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/test-mobile && cp package-lock.json apps/test-mobile",
