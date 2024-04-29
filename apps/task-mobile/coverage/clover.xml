@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1714409433479" clover="3.2.0">
-  <project timestamp="1714409433479" name="All files">
-    <metrics statements="71" coveredstatements="38" conditionals="112" coveredconditionals="64" methods="21" coveredmethods="9" elements="204" coveredelements="111" complexity="0" loc="71" ncloc="71" packages="9" files="9" classes="9"/>
+<coverage generated="1714434081828" clover="3.2.0">
+  <project timestamp="1714434081829" name="All files">
+    <metrics statements="41" coveredstatements="41" conditionals="104" coveredconditionals="64" methods="10" coveredmethods="10" elements="155" coveredelements="115" complexity="0" loc="41" ncloc="41" packages="7" files="7" classes="7"/>
     <package name="Avatar">
       <metrics statements="10" coveredstatements="10" conditionals="16" coveredconditionals="15" methods="2" coveredmethods="2"/>
       <file name="index.tsx" path="C:\repository\assa\monorepo-task-manager\apps\task-mobile\src\app\components\Avatar\index.tsx">
@@ -22,7 +22,7 @@
       <metrics statements="6" coveredstatements="6" conditionals="52" coveredconditionals="24" methods="2" coveredmethods="2"/>
       <file name="index.tsx" path="C:\repository\assa\monorepo-task-manager\apps\task-mobile\src\app\components\Button\index.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="52" coveredconditionals="24" methods="2" coveredmethods="2"/>
-        <line num="23" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
         <line num="33" count="3" type="stmt"/>
         <line num="34" count="3" type="stmt"/>
         <line num="36" count="3" type="cond" truecount="2" falsecount="0"/>
@@ -56,62 +56,20 @@
       <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="C:\repository\assa\monorepo-task-manager\apps\task-mobile\src\app\components\IconButton\index.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="18" count="4" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
       </file>
     </package>
-    <package name="TaskCreationModal">
-      <metrics statements="16" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
-      <file name="index.tsx" path="C:\repository\assa\monorepo-task-manager\apps\task-mobile\src\app\components\TaskCreationModal\index.tsx">
-        <metrics statements="16" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="35" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="TaskDeleteModal">
-      <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
-      <file name="index.tsx" path="C:\repository\assa\monorepo-task-manager\apps\task-mobile\src\app\components\TaskDeleteModal\index.tsx">
-        <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
-        <line num="12" count="0" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="16" count="0" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="57" count="0" type="stmt"/>
-      </file>
-    </package>
-    <package name="TaskList">
-      <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-      <file name="index.tsx" path="C:\repository\assa\monorepo-task-manager\apps\task-mobile\src\app\components\TaskList\index.tsx">
-        <metrics statements="7" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
+    <package name="TaskItem">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="index.tsx" path="C:\repository\assa\monorepo-task-manager\apps\task-mobile\src\app\components\TaskItem\index.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
       </file>
     </package>
     <package name="TextInput">

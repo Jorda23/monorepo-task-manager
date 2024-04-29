@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 import { Modal, Portal, Text } from 'react-native-paper';
-import { Button } from '../Button';
+
+import { Button } from '../../components/Button';
 import { useTaskActions } from '../../hook/useTaskActions';
-import { IconButton } from '../IconButton';
+import { IconButton } from '../../components/IconButton';
 
 interface Props {
   taskId: string;
@@ -19,7 +20,7 @@ export const TaskDeleteModal = ({ taskId }: Props) => {
   };
 
   return (
-    <View style={{ height: 50, width: 40 }}>
+    <View style={{ height: 50, width: 40 }} testID="delete-modal">
       <IconButton iconName={'Cancel'} onPress={() => setOnOpen(true)} />
       <Portal>
         <Modal

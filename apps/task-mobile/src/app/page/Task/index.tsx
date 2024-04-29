@@ -4,8 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { FAB, Portal } from 'react-native-paper';
 
 import Header from '../../components/Header';
-import TaskList from '../../components/TaskList';
-import { TaskCreationModal } from '../../components/TaskCreationModal';
+import TaskList from '../../shared/TaskList';
+import { TaskCreationModal } from '../../shared/TaskCreationModal';
 
 export const Task = () => {
   const navigation = useNavigation();
@@ -43,12 +43,12 @@ export const Task = () => {
             }
           }}
         />
+      </Portal>
 
-        <TaskCreationModal
+      <TaskCreationModal
           showModal={showModal}
           onClose={() => setState((prev) => ({ ...prev, showModal: false }))}
         />
-      </Portal>
     </View>
   );
 };

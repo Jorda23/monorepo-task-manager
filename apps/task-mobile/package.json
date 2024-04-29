@@ -34,7 +34,8 @@
     "moment": "*",
     "react-native-get-random-values": "*",
     "@testing-library/react": "*",
-    "@testing-library/jest-dom": "*"
+    "@testing-library/jest-dom": "*",
+    "redux-mock-store": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/task-mobile && cp package-lock.json apps/task-mobile",

@@ -1,6 +1,6 @@
-// store.ts
 import { configureStore, Middleware } from '@reduxjs/toolkit';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import { api } from '../services/ElementList.services'; 
 import tasksReducer from "./tasks/slice";
 

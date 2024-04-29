@@ -2,6 +2,13 @@
 
 This project is a comprehensive task management system built with modern web development technologies, focusing primarily on React, TypeScript, and the capabilities of Nx for efficient monorepo management. It supports both web and mobile platforms.
 
+## 🌐 Live Demo
+
+Visit the live demo of the Task Manager:
+
+[![Netlify Logo](https://www.netlify.com/img/global/badges/netlify-color-bg.svg)](https://monorepo-task-manager.netlify.app/)
+
+
 ## Technologies
 
 The core technologies include:
