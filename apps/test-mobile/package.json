@@ -22,7 +22,16 @@
     "@expo-google-fonts/nunito": "*",
     "@react-navigation/native": "*",
     "@react-navigation/stack": "*",
-    "react-native-screens": "~3.29.0"
+    "react-native-screens": "~3.29.0",
+    "redux": "*",
+    "redux-thunk": "*",
+    "@reduxjs/toolkit": "*",
+    "cross-fetch": "*",
+    "react-query": "*",
+    "react-redux": "*",
+    "uuid": "*",
+    "@react-native-async-storage/async-storage": "*",
+    "moment": "*"
   },
   "scripts": {
     "eas-build-pre-install": "cd ../../ && node tools/scripts/eas-build-pre-install.mjs . apps/test-mobile && cp package-lock.json apps/test-mobile",

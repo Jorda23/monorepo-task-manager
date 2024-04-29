@@ -52,13 +52,13 @@ const Header = (props: Props) => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity onPress={handleHeadset}>
+      {/* <TouchableOpacity onPress={handleHeadset}>
         <Headset
           color={colors.onPrimaryContainer}
           width={isMobileSmall ? 24 : 35}
           height={isMobileSmall ? 24 : 35}
         />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 };

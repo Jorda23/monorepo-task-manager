@@ -3,6 +3,8 @@ import { PaperProvider } from 'react-native-paper';
 import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Provider } from 'react-redux';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import 'react-native-gesture-handler';
 import {
@@ -23,6 +25,7 @@ import { theme } from '../theme';
 import Home from './page/Home';
 import { Task } from './page/Task';
 import { TaskList } from './page/TaskList';
+import { store } from './store';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +36,9 @@ export type RootStackParamList = {
 };
 
 export const App = () => {
+  const queryClient = new QueryClient();
+
+
   const [fontsLoaded] = useFonts({
     Nunito_200ExtraLight,
     Nunito_300Light,
@@ -51,28 +57,32 @@ export const App = () => {
     return null;
   }
   return (
-    <PaperProvider theme={theme}>
-      <NavigationContainer>
-        <StatusBar barStyle="dark-content" />
-        <Stack.Navigator initialRouteName={'home'}>
-          <Stack.Screen
-            name="home"
-            component={Home}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="task"
-            component={Task}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="taskList"
-            component={TaskList}
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <PaperProvider theme={theme}>
+          <NavigationContainer>
+            <StatusBar barStyle="dark-content" />
+            <Stack.Navigator initialRouteName={'home'}>
+              <Stack.Screen
+                name="home"
+                component={Home}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="task"
+                component={Task}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="taskList"
+                component={TaskList}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </PaperProvider>
+      </Provider>
+    </QueryClientProvider>
   );
 };
 

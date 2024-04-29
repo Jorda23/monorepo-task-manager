@@ -5,14 +5,15 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Text } from 'react-native-paper';
 
 import ImgLogo from '../../../../assets/backgroundSplash.png';
-
 import { RootStackParamList } from '../../App';
 import { Button } from '../../components/Button';
-import { Text } from 'react-native-paper';
+import { useTaskActions } from '../../hook/useTaskActions';
+
 
 type LoginScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -28,6 +29,21 @@ const Home = ({ navigation }: Props) => {
   const handleNavigate = (route: keyof RootStackParamList) => {
     navigation.navigate(route);
   }
+
+  // const { setTaskIds } = useTaskActions();
+
+  // useEffect(() => {
+  //   const loadPersistedState = async () => {
+  //     const persistedStateString = await AsyncStorage.getItem('__redux__state__');
+  //     if (persistedStateString) {
+  //       const persistedState = JSON.parse(persistedStateString).tasks;
+  //       setTaskIds(persistedState);
+  //     }
+  //   };
+
+  //   loadPersistedState();
+  // }, [setTaskIds]);
+
 
   return (
     <KeyboardAvoidingView
@@ -73,7 +89,7 @@ const Home = ({ navigation }: Props) => {
               <Button label={'Taks'} variant="secondary" onPress={() => handleNavigate("task")}></Button>
             </View>
             <View style={{ flex: 2 }}>
-              <Button label={'List'} variant="secondary" onPress={() => handleNavigate("task")}></Button>
+              <Button label={'List'} variant="secondary" onPress={() => handleNavigate("taskList")}></Button>
             </View>
           </View>
         </View>
@@ -97,3 +113,7 @@ const styles = StyleSheet.create({
 });
 
 export default Home;
+function useEffect(arg0: () => void, arg1: ((taskWithId: import("../../store/tasks/slice").TaskWithId[]) => void)[]) {
+  throw new Error('Function not implemented.');
+}
+
