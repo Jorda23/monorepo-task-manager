@@ -56,7 +56,7 @@ export const CreateNewTask = () => {
         <Tooltip title="Add Task" arrow>
           <div>
             <CustomIcoButton
-              icon="PLUS"
+              icon="IconPlus"
               type="success"
               onClick={handleOpen}
               ariaLabel={'AddTask'}

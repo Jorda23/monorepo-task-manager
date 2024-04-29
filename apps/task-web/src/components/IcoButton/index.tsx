@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { IconButton, SvgIcon } from '@mui/material';
-import * as Icons from '../../assets/customIcons';
+import { IconsTypes, types } from '../../shared/iconsTypes/icons';
 
-type IconButtonType = 'success' | 'danger' | 'default'; 
+export type IconButtonType = 'success' | 'danger' | 'default'; 
 
 const getIconButtonStyles = (type: IconButtonType) => {
   switch (type) {
@@ -54,7 +54,7 @@ const StyledButton = styled(IconButton)<{ type: IconButtonType }>`
 interface Props {
   disabled?: boolean;
   onClick?: () => void;
-  icon: Icons.IconNames;
+  icon: types;
   type: IconButtonType;
   ariaLabel: string;
 }
@@ -66,15 +66,13 @@ export const CustomIcoButton: React.FC<Props> = ({
   type,
   ariaLabel
 }) => {
-  const iconSelected = Icons[icon as keyof typeof Icons];
-  console.log("iconSelected", iconSelected);
+  const iconSelected = IconsTypes.find((x) => x.type === icon);
 
   return (
     <StyledButton aria-label={ariaLabel} type={type} disabled={disabled} onClick={onClick}>
-      {/* {iconSelected && iconSelected && (
-        <SvgIcon component={iconSelected } />
-      )} */}
-      Mas
+      {iconSelected && iconSelected.icon && (
+        <SvgIcon component={iconSelected.icon} />
+      )}
     </StyledButton>
   );
 };

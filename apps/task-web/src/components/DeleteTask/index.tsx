@@ -34,7 +34,7 @@ export const DeleteTask = (props: Props) => {
       <Tooltip title="Delete Task">
         <div>
           <CustomIcoButton
-            icon="DELETE"
+            icon="IconDelete"
             type="danger"
             onClick={handleOpen}
             ariaLabel={'deleteTask'}

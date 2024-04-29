@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
-import svgrPlugin from 'vite-plugin-svgr';
+import svgr from '@svgr/rollup';
 
 export default defineConfig({
   root: __dirname,
@@ -18,11 +18,7 @@ export default defineConfig({
     include: ['@testing-library/react', 'react', 'react-dom'],
   },
 
-  plugins: [react(), nxViteTsPaths(),   svgrPlugin({
-    svgrOptions: {
-      icon: true, // Optimiza los SVGs para ser usados como íconos (elimina dimensiones por defecto)
-    },
-  }),],
+  plugins: [react(), nxViteTsPaths(), svgr()],
   
   server: {
     watch: {

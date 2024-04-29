@@ -20,9 +20,38 @@ jest.mock('../../../hook/store', () => ({
 }));
 
 describe('TaskList', () => {
+  // Ensure this is consistent in all tests
   beforeEach(() => {
-    // Reset the mock before each test
-    (useAppSelector as jest.Mock).mockReset();
+    (useAppSelector as jest.Mock).mockImplementation((callback) =>
+      callback({
+        tasks: [],
+        loading: false,
+        error: null,
+      })
+    );
+  });
+
+  test('renders tasks from Redux state', () => {
+    const mockTasks: TaskWithId[] = [
+      { id: '1', name: 'Task 1' },
+      { id: '2', name: 'Task 2' },
+    ];
+
+    (useAppSelector as jest.Mock).mockImplementation((callback) =>
+      callback({
+        tasks: mockTasks,
+        loading: false,
+      })
+    );
+
+    render(
+      <Provider store={store}>
+        <TaskList />
+      </Provider>
+    );
+
+    expect(screen.getByText('Task 1')).toBeInTheDocument();
+    expect(screen.getByText('Task 2')).toBeInTheDocument();
   });
 
   test('renders the correct number of tasks', () => {
