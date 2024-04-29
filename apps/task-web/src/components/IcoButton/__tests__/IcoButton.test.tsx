@@ -106,7 +106,7 @@ describe('CustomIcoButton', () => {
     );
 
     const button = getByLabelText('IconButtonAction');
-    expect(button).not.toBeDisabled(); // default disabled state should be false
+    expect(button).not.toBeDisabled(); 
   });
 
   test('renders correct icon based on prop', () => {
@@ -146,7 +146,7 @@ describe('CustomIcoButton', () => {
       // Check for the disabled attribute
       expect(button).toBeDisabled();
       // Optionally check for specific class related to disabled state
-      expect(button).toHaveClass('Mui-disabled'); // Update this based on your actual class for disabled state
+      expect(button).toHaveClass('Mui-disabled');
     });
   });
 });

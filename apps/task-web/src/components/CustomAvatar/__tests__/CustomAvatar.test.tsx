@@ -1,4 +1,3 @@
-// CustomAvatar.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { CustomAvatar } from '../index';
