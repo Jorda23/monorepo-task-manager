@@ -2,6 +2,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
+import svgrPlugin from 'vite-plugin-svgr';
 
 export default defineConfig({
   root: __dirname,
@@ -12,10 +13,21 @@ export default defineConfig({
       '@': '/src',
     },
   },
+
+  optimizeDeps: {
+    include: ['@testing-library/react', 'react', 'react-dom'],
+  },
+
+  plugins: [react(), nxViteTsPaths(),   svgrPlugin({
+    svgrOptions: {
+      icon: true, // Optimiza los SVGs para ser usados como íconos (elimina dimensiones por defecto)
+    },
+  }),],
   
   server: {
-    port: 4200,
-    host: 'localhost',
+    watch: {
+      usePolling: true,
+    },
   },
 
   preview: {
@@ -23,7 +35,7 @@ export default defineConfig({
     host: 'localhost',
   },
 
-  plugins: [react(), nxViteTsPaths()],
+
 
   // Uncomment this if you are using workers.
   // worker: {

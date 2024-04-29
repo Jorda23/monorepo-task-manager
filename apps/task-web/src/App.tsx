@@ -1,6 +1,7 @@
-import { Button } from '@mui/material';
-
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+
+import { ManagerRoutes } from './routes';
 import { store } from './store';
 import { ThemeProvider } from './theme/ThemeContext';
 
@@ -8,7 +9,9 @@ function App() {
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <Button variant="contained">Contained</Button>
+        <BrowserRouter>
+          <ManagerRoutes />
+        </BrowserRouter>
       </ThemeProvider>
     </Provider>
   );

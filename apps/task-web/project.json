@@ -55,12 +55,20 @@
       }
     },
     "test": {
-      "executor": "@nx/vite:test",
-      "outputs": ["{options.reportsDirectory}"],
+      "executor": "@nrwl/jest:jest",
       "options": {
-        "reportsDirectory": "../../coverage/apps/task-web"
+        "jestConfig": "apps/task-web/jest.config.js",
+        "passWithNoTests": true
       }
     },
+    "test:coverage": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "apps/task-web/jest.config.js",
+        "passWithNoTests": true,
+        "coverage": true
+      }
+    },    
     "lint": {
       "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"]
