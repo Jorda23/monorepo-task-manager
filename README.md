@@ -11,3 +11,50 @@ The core technologies include:
 - **Expo**: For managing the lifecycle and utilities in React Native applications.
 - **Vite**: Employed for bundling the web application, ensuring fast rebuilds.
 - **React Native**: For mobile application development compatible with iOS and Android.
+
+## 📦 Installation
+
+To compile and run this project, follow these steps:
+
+**Installing Dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+**Running app web**:
+
+   ```bash
+   npm run serve:web
+   ```
+
+**Create build web**:
+
+   ```bash
+   npm run build:web
+   ```
+
+**Running app mobile**:
+
+   ```bash
+   npm run start:mobile
+   ```
+
+**Create build mobile**:
+
+   ```bash
+   npm run build:mobile
+   ```
+
+## Running Tests in the Project
+
+**Testing app web**
+
+```bash
+npm run test:web
+```
+**Testing app mobile**
+
+```bash
+
+npm run test:mobile
