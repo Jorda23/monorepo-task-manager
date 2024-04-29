@@ -1,27 +1,34 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 import { useAppSelector } from '../../hook/store';
 import { TaskWithId } from '../../store/tasks/slice';
+import { TaskDeleteModal } from '../TaskDeleteModal';
 
 const TaskList = () => {
-    const tasks = useAppSelector((state) => state.tasks);
+  const tasks = useAppSelector((state) => state.tasks);
 
- 
-
-  const renderItem = ({ item }:  { item: TaskWithId }) => (
+  const renderItem = ({ item }: { item: TaskWithId }) => (
     <View style={styles.taskContainer}>
       <Text style={styles.taskText}>{item.name}</Text>
-      <TouchableOpacity >
-        <Text style={styles.deleteButton}>Eliminar</Text>
-      </TouchableOpacity>
+      <TaskDeleteModal taskId={item.id} />
     </View>
   );
 
-  return (
+  return tasks.length === 0 ? (
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
+      <Text>There are no tasks</Text>
+    </View>
+  ) : (
     <FlatList
       data={tasks}
       renderItem={renderItem}
-      keyExtractor={item => item.id}
+      keyExtractor={(item) => item.id}
     />
   );
 };
@@ -31,17 +38,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
+    padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
+    borderBottomColor: '#ccc',
   },
   taskText: {
-    fontSize: 16
-  },
-  deleteButton: {
     fontSize: 16,
-    color: 'red'
-  }
+  },
 });
 
 export default TaskList;
