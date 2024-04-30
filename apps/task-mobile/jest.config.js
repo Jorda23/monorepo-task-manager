@@ -31,4 +31,4 @@ module.exports = {
       require.resolve('jest-expo/src/preset/assetFileTransformer.js'),
   },
   setupFiles: ['<rootDir>/jest.setup.js']
-};
+}; 

@@ -4,11 +4,10 @@ module.exports = {
   testEnvironment: 'jsdom',
   testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  collectCoverage: true,
   coverageThreshold: {
     global: {
       branches: 70,
-      functions: 70,
+      functions: 70, 
       lines: 70,
       statements: 70,
     },

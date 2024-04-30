@@ -5,14 +5,12 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Text } from 'react-native-paper';
 
 import ImgLogo from '../../../../assets/backgroundSplash.png';
 import { RootStackParamList } from '../../App';
 import { Button } from '../../components/Button';
-import { useTaskActions } from '../../hook/useTaskActions';
 
 type LoginScreenNavigationProp = StackNavigationProp<
   RootStackParamList,
@@ -27,22 +25,6 @@ const Home = ({ navigation }: Props) => {
   const handleNavigate = (route: keyof RootStackParamList) => {
     navigation.navigate(route);
   };
-
-
-
-  // const { setTaskIds } = useTaskActions();
-
-  // useEffect(() => {
-  //   const loadPersistedState = async () => {
-  //     const persistedStateString = await AsyncStorage.getItem('__redux__state__');
-  //     if (persistedStateString) {
-  //       const persistedState = JSON.parse(persistedStateString).tasks;
-  //       setTaskIds(persistedState);
-  //     }
-  //   };
-
-  //   loadPersistedState();
-  // }, [setTaskIds]);
 
   return (
     <KeyboardAvoidingView
